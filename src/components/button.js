@@ -15,10 +15,10 @@ const icons = {
     upload: <UploadIcon className="button-icon" aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 167 167" /> 
 };
 
-const Button = ({icon, onClick, text}) => {
+const Button = ({disabled=false, icon, onClick, text}) => {
 
     return (
-        <button className="button" aria-label={text} onClick={() => onClick() }>
+        <button className="button" aria-label={text} onClick={() => onClick()} disabled={disabled}>
             {icon && icons[icon]}
             <p className="button-text">{text}</p>
         </button>

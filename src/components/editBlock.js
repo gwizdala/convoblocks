@@ -1,7 +1,14 @@
 import React from 'react';
 import {blockTypes} from '../utils/enums';
+import ButtonList from './buttonList';
 
-const Block = ({content, index, onUpdate, type}) => {
+const EditBlock = ({
+    content,
+    headerButtons,
+    index,
+    onUpdate,
+    type
+}) => {
 
     const update = ({key, value}) => {
         const newContent = content;
@@ -41,9 +48,10 @@ const Block = ({content, index, onUpdate, type}) => {
 
     return (
         <div className="block">
+            <ButtonList buttons={headerButtons} />
             {renderOptions()}
         </div>
     );
 }
 
-export default Block
+export default EditBlock
