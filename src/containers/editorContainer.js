@@ -30,9 +30,16 @@ const EditorContainer = ({blocks, participants, onUpdate}) => {
             return <AddBlock onAdd={(type) => addBlock({index: 0, item: type})} />;
         }
 
-        return blocks.map((block, index) => 
-            <Block {...block} key={index} index onUpdate={(index, item) => updateBlock({index, item})} />
+        let blocksMap = blocks.map((block, index) =>
+            <React.Fragment>
+                <AddBlock key={`Add-${index}`} onAdd={(type) => addBlock({index: index, item: type})} /> 
+                <Block {...block} key={`Modify-${index}`} index onUpdate={(index, item) => updateBlock({index, item})} />
+            </React.Fragment>
         );
+
+        blocksMap.push(<AddBlock key={`Add-${blocks.length}`} onAdd={(type) => addBlock({index: blocks.length, item: type})} />);
+
+        return blocksMap;
     } 
 
     return (

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {blockTypes} from '../utils/enums';
 
 const Block = ({content, index, onUpdate, type}) => {
@@ -15,7 +15,6 @@ const Block = ({content, index, onUpdate, type}) => {
 
         return options.map((option, index) => 
             <div key={`list-item-${index}`}>
-                {option.description && <p>{option.description}</p>}
                 <label htmlFor={`forminput-${index}-${option.key}`}>{option.title}</label>
                 {
                     {
@@ -32,9 +31,10 @@ const Block = ({content, index, onUpdate, type}) => {
                                 aria-label={option.title}
                                 aria-required="false" 
                                 onChange={(event) => update({key: option.key, value: event.target.value})}
-                                value={content[options.key] || ""} />
+                                value={content[option.key] || ""} />
                     }[option.type] 
                 }
+                {option.description && <p>{option.description}</p>}
             </div>
         );
     }

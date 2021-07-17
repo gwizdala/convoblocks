@@ -21,7 +21,7 @@ const AppContainer = () => {
         },
         {
             icon: "upload",
-            text: "Upload Saved Conversation"
+            text: "Load Conversation"
         }
     ];
 
