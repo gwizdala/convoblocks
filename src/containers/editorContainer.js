@@ -1,34 +1,41 @@
 import React from 'react';
-// import ButtonList from '../components/buttonList';
 import EditParticipants from '../components/editParticipants';
 import EditBlock from '../components/editBlock';
 import AddBlock from '../components/addBlock';
+import { blockTypes } from '../utils/enums';
 
 const EditorContainer = ({blocks, participants, onUpdate}) => {
 
     const updateParticipants = (newParticipants) => {
         onUpdate({
             participants: newParticipants,
-            blocks
+            blocks: blocks
         });
     }
     
     const addBlock = ({index, item}) => {
-        const newBlocks = blocks;
-        newBlocks.splice(index, 0, {type: item, content: {}});
+        const newBlocks = [...blocks];
+        let newContent = {};
+        blockTypes[item].options.forEach(option => {
+            if ("default" in option) {
+                newContent[option.key] = option.default;
+            }
+        });
+
+        newBlocks.splice(index, 0, {type: item, content: newContent});
 
         onUpdate({
-            participants,
+            participants: participants,
             blocks: newBlocks
         });
     }
 
     const updateBlock = ({index, item}) => {
-        const newBlocks = blocks;
+        const newBlocks = [...blocks];
         newBlocks[index] = item;
 
         onUpdate({
-            participants,
+            participants: participants,
             blocks: newBlocks
         });
     }
@@ -38,11 +45,11 @@ const EditorContainer = ({blocks, participants, onUpdate}) => {
             return;
         }
 
-        const newBlocks = blocks;
+        const newBlocks = [...blocks];
         [newBlocks[index - 1], newBlocks[index]] = [newBlocks[index], newBlocks[index - 1]];
 
         onUpdate({
-            participants,
+            participants: participants,
             blocks: newBlocks
         });
     }
@@ -52,21 +59,21 @@ const EditorContainer = ({blocks, participants, onUpdate}) => {
             return;
         }
 
-        const newBlocks = blocks;
+        const newBlocks = [...blocks];
         [newBlocks[index + 1], newBlocks[index]] = [newBlocks[index], newBlocks[index + 1]];
 
         onUpdate({
-            participants,
+            participants: participants,
             blocks: newBlocks
         });
     }
 
     const deleteBlock = (index) => {
-        const newBlocks = blocks;
+        const newBlocks = [...blocks];
         newBlocks.splice(index, 1);
 
         onUpdate({
-            participants,
+            participants: participants,
             blocks: newBlocks
         });
     }
@@ -100,9 +107,9 @@ const EditorContainer = ({blocks, participants, onUpdate}) => {
                             text: "Remove Block"
                         }
                     ]}
-                    index
+                    index={index}
                     key={`Modify-${index}`}
-                    onUpdate={(index, item) => updateBlock({index, item})} 
+                    onUpdate={({index, item}) => updateBlock({index, item})} 
                 />
             </React.Fragment>
         );

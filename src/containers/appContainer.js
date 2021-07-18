@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import ControlsContainer from './controlsContainer';
 import EditorContainer from './editorContainer';
+import RendererContainer from './rendererContainer';
 
 const modes = {
     EDIT: "Edit",
@@ -12,7 +13,8 @@ const AppContainer = () => {
     const [config, setConfig] = useState({
         participants: [], // The people participating in the conversation
         blocks: [] // The items contained within the conversation
-    })
+    });
+    const [history, setHistory] = useState([]);
     
     const buttons =  [
         {
@@ -38,12 +40,12 @@ const AppContainer = () => {
                 };
             case modes.SHOW:
                 buttons.unshift({
-                    onClick: () => setMode(modes.EDIT),
+                    onClick: () => {setMode(modes.EDIT); setHistory([]);},
                     text: "Edit Conversation"
                 });
                 return {
                     buttons,
-                    content: <p>Show Mode enabled</p>
+                    content: <RendererContainer {...config} history={history} onUpdate={(newHistory) => setHistory(newHistory)}  />
                 };
             default:
                 return {

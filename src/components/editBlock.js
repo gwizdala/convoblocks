@@ -12,17 +12,16 @@ const EditBlock = ({
 }) => {
 
     const update = ({key, value}) => {
-        const newContent = content;
+        const newContent = {...content};
         newContent[key] = value;
-
-        onUpdate({index, item: {type, content: newContent}});
+        onUpdate({index: index, item: {type, content: {...newContent}}});
     };
 
     const renderOptions = () => {
         const options = blockTypes[type].options;
 
-        return options.map((option, index) => 
-            <div key={`list-item-${index}`}>
+        return options.map((option, mapIndex) => 
+            <div key={`list-item-${index}-${mapIndex}`}>
                 <label htmlFor={`forminput-${index}-${option.key}`}>{option.title}</label>
                 {
                     {
@@ -31,12 +30,12 @@ const EditBlock = ({
                                 type="checkbox" 
                                 aria-label={option.title} 
                                 aria-required="false" 
-                                onChange={(event) => update({key: option.key, value: event.target.value})}
-                                checked={content[options.key] || options.default} />,
+                                onChange={(event) => update({key: option.key, value: event.target.checked})}
+                                checked={option.key in content ? content[option.key] : option.default} />,
                         'set': <UniqueListTextArea
                                 id={`forminput-${index}-${option.key}`}
                                 onUpdate={(newContent) =>  update({key: option.key, value: newContent})}
-                                content={content[option.key] || []}
+                                content={option.key in content ? content[option.key] : []}
                                 title={option.title} />,
                         'text': <input 
                                 id={`forminput-${index}-${option.key}`} 
@@ -44,7 +43,7 @@ const EditBlock = ({
                                 aria-label={option.title}
                                 aria-required="false" 
                                 onChange={(event) => update({key: option.key, value: event.target.value})}
-                                value={content[option.key] || ""} />
+                                value={option.key in content ? content[option.key] : ""} />
                     }[option.type] 
                 }
                 {option.description && <p>{option.description}</p>}
@@ -53,7 +52,7 @@ const EditBlock = ({
     }
 
     return (
-        <div className="block">
+        <div className="block-edit">
             <ButtonList buttons={headerButtons} />
             {renderOptions()}
         </div>

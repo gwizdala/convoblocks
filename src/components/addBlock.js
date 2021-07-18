@@ -18,9 +18,9 @@ const AddBlock = ({onAdd}) => {
             case modes.OPEN:
                 return <React.Fragment>
                         <Button icon="delete" onClick={() => setMode(modes.CLOSED)} text="Close" />
-                        <Button onClick={() => onAdd("TEXT")} text={blockTypes.TEXT.type} />
-                        <Button onClick={() => onAdd("PARTICIPANT")} text={blockTypes.PARTICIPANT.type} />
-                        <Button onClick={() => onAdd("RANDOM_TEXT")} text={blockTypes.RANDOM_TEXT.type} />
+                        <Button onClick={() => onAdd(blockTypes.TEXT.type)} text={blockTypes.TEXT.title} />
+                        <Button onClick={() => onAdd(blockTypes.PARTICIPANT.type)} text={blockTypes.PARTICIPANT.title} />
+                        <Button onClick={() => onAdd(blockTypes.RANDOM_TEXT.type)} text={blockTypes.RANDOM_TEXT.title} />
                     </React.Fragment>;
             default:
                 return;

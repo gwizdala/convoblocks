@@ -6,7 +6,8 @@ const inputTypes = {
 
 export const blockTypes = {
     TEXT: {
-        type: "Text",
+        type: "TEXT",
+        title: "Text",
         options: [
             {
                 title: "Title",
@@ -21,7 +22,8 @@ export const blockTypes = {
         ]
     },
     PARTICIPANT: {
-        type: "Participant",
+        type: "PARTICIPANT",
+        title: "Participant",
         options: [
             {
                 title: "Title",
@@ -45,7 +47,8 @@ export const blockTypes = {
         ]
     },
     RANDOM_TEXT: {
-        type: "Random Text",
+        type: "RANDOM_TEXT",
+        title: "Random Text",
         options: [
             {
                 title: "Title",
