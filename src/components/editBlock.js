@@ -1,6 +1,7 @@
 import React from 'react';
 import {blockTypes} from '../utils/enums';
 import ButtonList from './buttonList';
+import UniqueListTextArea from './uniqueListTextArea';
 
 const EditBlock = ({
     content,
@@ -32,6 +33,11 @@ const EditBlock = ({
                                 aria-required="false" 
                                 onChange={(event) => update({key: option.key, value: event.target.value})}
                                 checked={content[options.key] || options.default} />,
+                        'set': <UniqueListTextArea
+                                id={`forminput-${index}-${option.key}`}
+                                onUpdate={(newContent) =>  update({key: option.key, value: newContent})}
+                                content={content[option.key] || []}
+                                title={option.title} />,
                         'text': <input 
                                 id={`forminput-${index}-${option.key}`} 
                                 type="text" 
