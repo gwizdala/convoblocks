@@ -1,4 +1,5 @@
 import React from 'react';
+import './scss/rendererContainer.scss';
 import { blockTypes } from '../utils/enums';
 import RenderBlock from '../components/renderBlock';
 import ButtonList from '../components/buttonList';
@@ -125,12 +126,11 @@ const RendererContainer = ({blocks, participants, history, onUpdate}) => {
         }
 
         return blocks.map((block, mapIndex) => 
-            <div key={`render-item-${mapIndex}`}>
-                <RenderBlock 
-                    value={getValue({index: mapIndex})}
-                    title={block.content.title}
-                />
-            </div>
+            <RenderBlock 
+                key={`render-item-${mapIndex}`}
+                value={getValue({index: mapIndex})}
+                title={block.content.title}
+            />
         );
     }
 
@@ -146,7 +146,9 @@ const RendererContainer = ({blocks, participants, history, onUpdate}) => {
                     text: "Reset"
                 }
             ]} />
-            {renderShowBlocks()}
+            <div className="container-renderer--blocks">
+                {renderShowBlocks()}
+            </div>
         </div>
     );
 }

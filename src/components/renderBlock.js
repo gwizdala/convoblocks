@@ -1,14 +1,15 @@
 import React from 'react';
+import './scss/renderBlock.scss';
 
 const RenderBlock = ({value, title}) => {
 
     return (
         <div className="block block-render">
             <div className="block-render--title">
-                {title && <h2>{title}</h2> }
+                {title && <h1 className="block-render--title-text">{title}</h1> }
             </div>
             <div className="block-render--content">
-                <p>{value}</p>
+                <h2>{value}</h2>
             </div>
         </div>
     );

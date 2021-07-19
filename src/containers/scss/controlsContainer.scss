@@ -2,20 +2,42 @@
     background-color: #6200EE;
     height: 80px;
 
-    &--logo {
-        float: left;
-        max-height: 100%;
-    }
-
-    &--buttons {
+    &--menu {
         float: right;
 
         .button {
-            border-radius: 0px;
             height: 100%;
 
             &:focus {
                 border-color: #F57D20;
+            }
+        }
+
+        &-mobile {
+            display: none;
+            text-align: right;
+        }
+
+        &-desktop {
+            display: block;
+        }
+    }
+
+    &--logo {
+        float: left;
+        max-height: 100%;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .container-controls {
+        &--menu {
+            &-mobile {
+                display: block;
+            }
+
+            &-desktop {
+                display: none;
             }
         }
     }

@@ -5,3 +5,11 @@
         overflow-x: scroll;
     }
 }
+
+@media only screen and (max-width: 1024px) {
+    .container-editor {
+        &--builder {
+            flex-direction: column;
+        }
+    }
+}

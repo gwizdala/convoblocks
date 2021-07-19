@@ -93,17 +93,20 @@ const EditorContainer = ({blocks, participants, onUpdate}) => {
                         {
                             disabled: index === 0,
                             icon: "left",
+                            iconOnly: true,
                             onClick: () => moveBlockLeft(index),
                             text: "Move Left"
                         },
                         {
                             disabled: index === blocks.length - 1,
                             icon: "right",
+                            iconOnly: true,
                             onClick: () => moveBlockRight(index),
                             text: "Move Right"
                         },
                         {
                             icon: "delete",
+                            iconOnly: true,
                             onClick: () => deleteBlock(index),
                             text: "Remove Block"
                         }

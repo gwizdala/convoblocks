@@ -8,7 +8,6 @@ const modes = {
     OPEN: "Open"
 };
 
-
 const AddBlock = ({onAdd}) => {
     const [mode, setMode] = useState(modes.CLOSED);
 
