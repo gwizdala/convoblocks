@@ -27,11 +27,9 @@ const ControlsContainer = ({buttons}) => {
                 <div className="container-controls--menu container-controls--menu-desktop">
                     { buttons && <ButtonList buttons={buttons} /> }
                 </div>
-                <div className="container-controls--menu container-controls--menu-mobile">
-                    <Button icon="menu" iconOnly onClick={() => alternateMenu()} text={menuState} />
-                </div>
             </div>
             <div className="container-controls--menu-mobile">
+                <Button icon="menu" onClick={() => alternateMenu()} text={menuState} />
                 {menuState === modes.OPEN && <ButtonList buttons={buttons} vertical />}
             </div>
         </React.Fragment>

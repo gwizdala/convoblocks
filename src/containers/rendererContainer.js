@@ -134,18 +134,25 @@ const RendererContainer = ({blocks, participants, history, onUpdate}) => {
         );
     }
 
+    const buttonsList = [
+        {
+            onClick: () => randomize(),
+            text: "Shuffle"
+        },
+        {
+            onClick: () => reset(),
+            text: "Reset"
+        }
+    ];
+
     return (
         <div className="container container-renderer">
-            <ButtonList buttons={[
-                {
-                    onClick: () => randomize(),
-                    text: "Shuffle"
-                },
-                {
-                    onClick: () => reset(),
-                    text: "Reset"
-                }
-            ]} />
+            <div className="container-renderer--buttons-desktop">
+                <ButtonList buttons={buttonsList} />
+            </div>
+            <div className="container-renderer--buttons-mobile">
+                <ButtonList buttons={buttonsList} vertical />
+            </div>
             <div className="container-renderer--blocks">
                 {renderShowBlocks()}
             </div>

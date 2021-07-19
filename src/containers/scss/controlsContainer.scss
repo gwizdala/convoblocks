@@ -15,7 +15,6 @@
 
         &-mobile {
             display: none;
-            text-align: right;
         }
 
         &-desktop {
@@ -33,7 +32,8 @@
     .container-controls {
         &--menu {
             &-mobile {
-                display: block;
+                display: flex;
+                flex-direction: column;
             }
 
             &-desktop {

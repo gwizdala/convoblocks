@@ -4,12 +4,32 @@
         flex-wrap: wrap;
         justify-content: center;
     }
+
+    &--buttons {
+        &-desktop {
+            display: block;
+        }
+
+        &-mobile {
+            display: none;
+        }
+    }
 }
 
 @media only screen and (max-width: 1024px) {
     .container-renderer {
         &--blocks {
             flex-direction: column;
+        }
+
+        &--buttons {
+            &-desktop {
+                display: none;
+            }
+            
+            &-mobile {
+                display: block;
+            }
         }
     }
 }
