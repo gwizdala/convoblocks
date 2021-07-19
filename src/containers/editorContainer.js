@@ -1,4 +1,5 @@
 import React from 'react';
+import './scss/editorContainer.scss';
 import EditParticipants from '../components/editParticipants';
 import EditBlock from '../components/editBlock';
 import AddBlock from '../components/addBlock';
@@ -121,12 +122,16 @@ const EditorContainer = ({blocks, participants, onUpdate}) => {
 
     return (
         <div className="container container-editor">
-            <h2>Add Participants</h2>
-            <p>Write a newline-separated list of people you want in your conversation. If you don't want participants, leave this section blank.</p>
-            <EditParticipants participants={participants} onUpdate={(newParticipants) => updateParticipants(newParticipants)} />
+            <div className="container-editor--participants">
+                <h2>Add Participants</h2>
+                <p>Write a newline-separated list of people you want in your conversation. If you don't want participants, leave this section blank.</p>
+                <EditParticipants participants={participants} onUpdate={(newParticipants) => updateParticipants(newParticipants)} />
+            </div>
             <h2>Build Your Conversation</h2>
             <p>Add building blocks for your conversation. Each block serves as a different section of content in the conversation.</p>
-            {renderEditBlocks()}
+            <div className="container-editor--builder">
+                {renderEditBlocks()}
+            </div>
         </div>
     );
 }

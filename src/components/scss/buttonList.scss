@@ -1,0 +1,8 @@
+.button-list {
+    display: flex;
+    flex-direction: row;
+
+    &--vertical {
+        flex-direction: column;
+    }
+}

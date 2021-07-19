@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import './scss/appContainer.scss';
 import ControlsContainer from './controlsContainer';
 import EditorContainer from './editorContainer';
 import RendererContainer from './rendererContainer';
@@ -57,7 +58,7 @@ const AppContainer = () => {
     const source = getSource();
 
     return (
-        <div className="container container-app">
+        <div className="container-app">
             <ControlsContainer 
                 buttons={source.buttons}
             />

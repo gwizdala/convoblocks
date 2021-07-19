@@ -1,4 +1,5 @@
 import React from 'react';
+import './scss/button.scss';
 import {ReactComponent as AddIcon} from '../assets/icons/add.svg';
 import {ReactComponent as DeleteIcon} from '../assets/icons/delete.svg';
 import {ReactComponent as LeftIcon} from '../assets/icons/left.svg';
@@ -19,8 +20,10 @@ const Button = ({disabled=false, icon, onClick, text}) => {
 
     return (
         <button className="button" aria-label={text} onClick={() => onClick()} disabled={disabled}>
-            {icon && icons[icon]}
-            <p className="button-text">{text}</p>
+            <span className="button-container">
+                {icon && icons[icon]}
+                <p className="button-text">{text}</p>
+            </span>
         </button>
     );
 }

@@ -1,0 +1,41 @@
+.button {
+    background-color: #B3F0FF;
+    border: 3px solid transparent;
+    border-radius: 10px;
+    color: #000000;
+    
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+
+    margin: 5px;
+    min-width: 200px;
+
+    &-container {
+        align-items: center;
+        display: flex;
+    }
+
+    &-icon {
+        fill: #000000;
+        padding: 5px;
+    }
+
+    &-text {
+        padding: 5px;
+    }
+
+    &:focus {
+        background-color: #69E5E8;
+        border-color: #6200EE;
+        box-shadow: none;
+        outline: none;
+    }
+
+    &:hover {
+        background-color: #69E5E8;
+    }
+
+    &:disabled {
+        background-color: #c5c5c5;
+    }
+}

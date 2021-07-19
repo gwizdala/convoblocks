@@ -1,4 +1,5 @@
 import React from 'react';
+import './scss/editBlock.scss';
 import {blockTypes} from '../utils/enums';
 import ButtonList from './buttonList';
 import UniqueListTextArea from './uniqueListTextArea';
@@ -21,7 +22,7 @@ const EditBlock = ({
         const options = blockTypes[type].options;
 
         return options.map((option, mapIndex) => 
-            <div key={`list-item-${index}-${mapIndex}`}>
+            <div className="block-edit--input" key={`list-item-${index}-${mapIndex}`}>
                 <label htmlFor={`forminput-${index}-${option.key}`}>{option.title}</label>
                 {
                     {
@@ -46,14 +47,17 @@ const EditBlock = ({
                                 value={option.key in content ? content[option.key] : ""} />
                     }[option.type] 
                 }
-                {option.description && <p>{option.description}</p>}
+                {option.description && <div className="block-edit--description"><span>{option.description}</span></div>}
             </div>
         );
     }
 
     return (
-        <div className="block-edit">
-            <ButtonList buttons={headerButtons} />
+        <div className="block block-edit">
+            <div className="block-edit--header">
+                <h2>{blockTypes[type].title}</h2>
+                <ButtonList buttons={headerButtons}/>
+            </div>
             {renderOptions()}
         </div>
     );

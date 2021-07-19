@@ -1,0 +1,41 @@
+.block-edit {
+    min-width: 400px;
+
+    &--description {
+        align-items: center;
+        display: flex;
+        background-color: #e1f9ff;
+        border-left: 4px solid #B3F0FF;
+
+        padding: 10px;
+
+        &::before {
+            content: "ⓘ";
+            margin-right: 5px;;
+        }
+    }
+
+    &--header {
+        display: flex;
+        justify-content: space-between;
+
+        .button-list {
+            width: 200px;
+    
+            .button {
+                min-width: 0;
+    
+                &-text {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &--input {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}

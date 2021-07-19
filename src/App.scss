@@ -1,0 +1,31 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+input[type="text"], textarea {
+    border: 3px solid #B3F0FF;
+
+    &:focus {
+        border-color: #6200EE;
+        box-shadow: none;
+        outline: none;
+    }
+}
+
+textarea {
+    box-sizing: border-box;
+    min-height: 200px;
+    resize: none;
+}
+
+.container {
+    padding: 10px 50px 0 50px;
+}
+
+.block {
+    border: 3px solid #B3F0FF;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+}

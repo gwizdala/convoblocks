@@ -1,0 +1,7 @@
+.container-editor {
+    &--builder {
+        display: flex;
+        max-width: 100%;
+        overflow-x: scroll;
+    }
+}

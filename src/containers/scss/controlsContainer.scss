@@ -1,0 +1,22 @@
+.container-controls {
+    background-color: #6200EE;
+    height: 80px;
+
+    &--logo {
+        float: left;
+        max-height: 100%;
+    }
+
+    &--buttons {
+        float: right;
+
+        .button {
+            border-radius: 0px;
+            height: 100%;
+
+            &:focus {
+                border-color: #F57D20;
+            }
+        }
+    }
+}
