@@ -34,6 +34,10 @@ const AppContainer = () => {
     };
 
     const upload = (event) => {
+        if (!event.target.files[0]) {
+            return;
+        }
+
         const fileReader = new FileReader();
 
         fileReader.readAsText(event.target.files[0], "UTF-8");
@@ -41,7 +45,6 @@ const AppContainer = () => {
             const result = uploadedData.target.result;
             try {
                 const parsedResult = result ? JSON.parse(result) : {};
-                console.log(parsedResult);
 
                 // set parsed results.
                 // since the editors are looking for explicit json fields here,
@@ -50,6 +53,7 @@ const AppContainer = () => {
                     participants: parsedResult.participants,
                     blocks: parsedResult.blocks
                 });
+                setHistory([]);
             } catch (e) {
                 alert("The provided file is invalid. Please try again.");
             }

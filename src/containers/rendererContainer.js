@@ -139,7 +139,7 @@ const RendererContainer = ({blocks, participants, history, onUpdate}) => {
             <ButtonList buttons={[
                 {
                     onClick: () => randomize(),
-                    text: "Randomize"
+                    text: "Shuffle"
                 },
                 {
                     onClick: () => reset(),
