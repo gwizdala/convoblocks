@@ -2,6 +2,8 @@
 
 # About
 
+https://gwizdala.github.io/convoblocks
+
 ConvoBlocks is a conversation editor for education.
 
 Use this page to build dialogues that auto-magically randomize values and participants, making sure that each person gets an equal amount of time with each part of the topic.
