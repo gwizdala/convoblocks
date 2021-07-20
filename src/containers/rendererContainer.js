@@ -136,14 +136,30 @@ const RendererContainer = ({blocks, participants, history, onUpdate}) => {
 
     const buttonsList = [
         {
+            icon: "shuffle",
             onClick: () => randomize(),
             text: "Shuffle"
         },
         {
+            icon: "reset",
             onClick: () => reset(),
             text: "Reset"
         }
     ];
+
+    const mobileButtonsList = [
+        {
+            icon: "shuffle",
+            onClick: () => randomize(),
+            text: "Shuffle"
+        },
+        {
+            icon: "reset",
+            iconOnly: true,
+            onClick: () => reset(),
+            text: "Reset"
+        }
+    ]
 
     return (
         <div className="container container-renderer">
@@ -151,7 +167,7 @@ const RendererContainer = ({blocks, participants, history, onUpdate}) => {
                 <ButtonList buttons={buttonsList} />
             </div>
             <div className="container-renderer--buttons-mobile">
-                <ButtonList buttons={buttonsList} vertical />
+                <ButtonList buttons={mobileButtonsList}/>
             </div>
             <div className="container-renderer--blocks">
                 {renderShowBlocks()}

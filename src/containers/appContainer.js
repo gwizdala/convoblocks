@@ -3,14 +3,18 @@ import './scss/appContainer.scss';
 import ControlsContainer from './controlsContainer';
 import EditorContainer from './editorContainer';
 import RendererContainer from './rendererContainer';
+import HelpContainer from './helpContainer';
+import Button from '../components/button';
 
 const modes = {
     EDIT: "Edit",
+    HELP: "Help",
     SHOW: "Show"
 };
 
 const AppContainer = () => {
     const [mode, setMode] = useState(modes.EDIT);
+    const [previousMode, setPreviousMode] = useState(null);
     const [config, setConfig] = useState({
         participants: [], // The people participating in the conversation
         blocks: [] // The items contained within the conversation
@@ -71,28 +75,50 @@ const AppContainer = () => {
             icon: "upload",
             onClick: () => uploadRef.current.click(),
             text: "Load Conversation"
+        },
+        {
+            icon: mode === modes.HELP ? "delete" : "help",
+            onClick: () => {
+                if (mode === modes.HELP) {
+                    setMode(previousMode);
+
+                } else {
+                    setPreviousMode(mode);
+                    setMode(modes.HELP);
+                } 
+            },
+            text: mode === modes.HELP ? "Close Help" : "Help",
         }
     ];
 
     const getSource = () => {
         switch(mode) {
             case modes.EDIT:
-                buttons.unshift({
-                    onClick: () => setMode(modes.SHOW),
-                    text: "Show Conversation"
-                });
                 return {
                     buttons,
-                    content: <EditorContainer {...config} onUpdate={(newConfig) => setConfig(newConfig)} />
+                    content: <EditorContainer {...config} onUpdate={(newConfig) => setConfig(newConfig)} />,
+                    navigationButton: {
+                        onClick: () => setMode(modes.SHOW),
+                        text: "Show Conversation"
+                    }
+                };
+            case modes.HELP:
+                return {
+                    buttons,
+                    content: <HelpContainer onExampleLoad={(exampleConfig) => {
+                        setConfig(exampleConfig); 
+                        setHistory([]);
+                        setMode(modes.SHOW);
+                    }} />
                 };
             case modes.SHOW:
-                buttons.unshift({
-                    onClick: () => {setMode(modes.EDIT); setHistory([]);},
-                    text: "Edit Conversation"
-                });
                 return {
                     buttons,
-                    content: <RendererContainer {...config} history={history} onUpdate={(newHistory) => setHistory(newHistory)}  />
+                    content: <RendererContainer {...config} history={history} onUpdate={(newHistory) => setHistory(newHistory)}  />,
+                    navigationButton: {
+                        onClick: () => {setMode(modes.EDIT); setHistory([]);},
+                        text:"Edit Conversation"
+                    }
                 };
             default:
                 return {
@@ -107,6 +133,7 @@ const AppContainer = () => {
         <div className="container-app">
             <ControlsContainer 
                 buttons={source.buttons}
+                navigationButton={source.navigationButton}
             />
             {source.content}
             <input 
