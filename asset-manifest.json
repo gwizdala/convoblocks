@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/convoblocks/static/css/main.95d1e7fe.chunk.css",
-    "main.js": "/convoblocks/static/js/main.2be07e94.chunk.js",
-    "main.js.map": "/convoblocks/static/js/main.2be07e94.chunk.js.map",
+    "main.css": "/convoblocks/static/css/main.27610406.chunk.css",
+    "main.js": "/convoblocks/static/js/main.672c3c97.chunk.js",
+    "main.js.map": "/convoblocks/static/js/main.672c3c97.chunk.js.map",
     "runtime-main.js": "/convoblocks/static/js/runtime-main.775e91f7.js",
     "runtime-main.js.map": "/convoblocks/static/js/runtime-main.775e91f7.js.map",
     "static/js/2.b0e4cd91.chunk.js": "/convoblocks/static/js/2.b0e4cd91.chunk.js",
@@ -10,21 +10,24 @@
     "static/js/3.1fe41a03.chunk.js": "/convoblocks/static/js/3.1fe41a03.chunk.js",
     "static/js/3.1fe41a03.chunk.js.map": "/convoblocks/static/js/3.1fe41a03.chunk.js.map",
     "index.html": "/convoblocks/index.html",
-    "static/css/main.95d1e7fe.chunk.css.map": "/convoblocks/static/css/main.95d1e7fe.chunk.css.map",
+    "static/css/main.27610406.chunk.css.map": "/convoblocks/static/css/main.27610406.chunk.css.map",
     "static/js/2.b0e4cd91.chunk.js.LICENSE.txt": "/convoblocks/static/js/2.b0e4cd91.chunk.js.LICENSE.txt",
     "static/media/add.c7dcd755.svg": "/convoblocks/static/media/add.c7dcd755.svg",
     "static/media/convoblocks_logo.eaa0f00a.png": "/convoblocks/static/media/convoblocks_logo.eaa0f00a.png",
     "static/media/delete.f7aecc52.svg": "/convoblocks/static/media/delete.f7aecc52.svg",
+    "static/media/help.4f0a703b.svg": "/convoblocks/static/media/help.4f0a703b.svg",
     "static/media/left.26fa120c.svg": "/convoblocks/static/media/left.26fa120c.svg",
     "static/media/menu.1a322f44.svg": "/convoblocks/static/media/menu.1a322f44.svg",
+    "static/media/reset.4a9f3719.svg": "/convoblocks/static/media/reset.4a9f3719.svg",
     "static/media/right.821a1b7a.svg": "/convoblocks/static/media/right.821a1b7a.svg",
     "static/media/save.62718f20.svg": "/convoblocks/static/media/save.62718f20.svg",
+    "static/media/shuffle.b93ab112.svg": "/convoblocks/static/media/shuffle.b93ab112.svg",
     "static/media/upload.b94056fd.svg": "/convoblocks/static/media/upload.b94056fd.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.775e91f7.js",
     "static/js/2.b0e4cd91.chunk.js",
-    "static/css/main.95d1e7fe.chunk.css",
-    "static/js/main.2be07e94.chunk.js"
+    "static/css/main.27610406.chunk.css",
+    "static/js/main.672c3c97.chunk.js"
   ]
 }
