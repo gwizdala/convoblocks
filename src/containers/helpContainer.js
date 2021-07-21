@@ -14,7 +14,7 @@ const HelpContainer = ({onExampleLoad}) => {
     return (
         <div className="container container-help">
             <h1>ConvoBlocks is a conversation editor.</h1>
-            <p>ConvoBlocks lets you creating building blocks of a conversation in which you can pick people and items at random while guaranteeing equal opportunity and randomness for each selection.</p>
+            <p>ConvoBlocks helps you create building blocks of a conversation in which you can pick people and items at random while guaranteeing equal opportunity for each selection.</p>
             <h2>Some examples of what you can use this tool for include:</h2>
             <ul>
                 <li>Building dialogues that auto-magically randomize values and participants, making sure that each person gets an equal amount of time with each part of the topic.</li>
