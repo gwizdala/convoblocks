@@ -1,13 +1,13 @@
 .container-editor {
+    display: inline-flex;
     &--builder {
         display: flex;
-        max-width: 100%;
-        overflow-x: scroll;
     }
 }
 
 @media only screen and (max-width: 1024px) {
     .container-editor {
+        display: block;
         &--builder {
             flex-direction: column;
         }

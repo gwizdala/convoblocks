@@ -9,7 +9,7 @@ const modes = {
     OPEN: "Close Menu"
 };
 
-const ControlsContainer = ({buttons, navigationButton}) => {
+const ControlsContainer = ({buttons}) => {
     const [menuState, setMenuState] = useState(modes.CLOSED);
 
     const alternateMenu = () => {
@@ -32,11 +32,6 @@ const ControlsContainer = ({buttons, navigationButton}) => {
                 <Button icon="menu" onClick={() => alternateMenu()} text={menuState} />
                 {menuState === modes.OPEN && <ButtonList buttons={buttons} vertical />}
             </div>
-            { navigationButton &&
-                <div className="container container-controls--navigation">
-                    <Button {...navigationButton} />
-                </div>
-            }
         </React.Fragment>
     );
 }

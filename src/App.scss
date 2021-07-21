@@ -5,6 +5,8 @@ body {
 
 input[type="text"], textarea {
     border: 3px solid #B3F0FF;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
 
     &:focus {
         border-color: #6200EE;
@@ -19,8 +21,30 @@ textarea {
     resize: none;
 }
 
+.flex {
+    display: flex;
+
+    &-vertical {
+        flex-direction: column;
+    }
+}
+
 .container {
+    box-sizing: border-box;
     padding: 10px 50px 0 50px;
+
+    &-sidebar {
+        position: sticky;
+        background-color: #B3F0FF;
+        height: calc(100vh - 100px);
+        left: 0;
+        top: 100px;        
+        width: 400px;
+    }
+
+    &-content {
+        max-width: calc(100% - 400px);
+    }
 }
 
 .block {
@@ -33,5 +57,10 @@ textarea {
 @media only screen and (max-width: 1024px) {
     .container {
         padding: 10px 10px 0 10px;
+
+        &-sidebar {
+            width: unset;
+            height: fit-content;
+        }
     }
 }

@@ -1,4 +1,5 @@
 .container-renderer {
+    display: inline-flex;
     &--blocks {
         display: flex;
         flex-wrap: wrap;
@@ -18,6 +19,7 @@
 
 @media only screen and (max-width: 1024px) {
     .container-renderer {
+        display: block;
         &--blocks {
             flex-direction: column;
         }

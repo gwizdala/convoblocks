@@ -4,7 +4,7 @@ import { blockTypes } from '../utils/enums';
 import RenderBlock from '../components/renderBlock';
 import ButtonList from '../components/buttonList';
 
-const RendererContainer = ({blocks, participants, history, onUpdate}) => {
+const RendererContainer = ({blocks, navigationButtons, participants, history, onUpdate}) => {
 
     const countUniqueParticipantBlocks = () => {
         let numUniqueParticipantBlocks = 0;
@@ -136,11 +136,13 @@ const RendererContainer = ({blocks, participants, history, onUpdate}) => {
 
     const buttonsList = [
         {
+            dark: true,
             icon: "shuffle",
             onClick: () => randomize(),
             text: "Shuffle"
         },
         {
+            dark: true,
             icon: "reset",
             onClick: () => reset(),
             text: "Reset"
@@ -149,11 +151,13 @@ const RendererContainer = ({blocks, participants, history, onUpdate}) => {
 
     const mobileButtonsList = [
         {
+            dark: true,
             icon: "shuffle",
             onClick: () => randomize(),
             text: "Shuffle"
         },
         {
+            dark: true,
             icon: "reset",
             iconOnly: true,
             onClick: () => reset(),
@@ -162,15 +166,22 @@ const RendererContainer = ({blocks, participants, history, onUpdate}) => {
     ]
 
     return (
-        <div className="container container-renderer">
-            <div className="container-renderer--buttons-desktop">
-                <ButtonList buttons={buttonsList} />
+        <div className="container-renderer">
+            <div className="container container-sidebar flex flex-vertical">
+                { navigationButtons &&
+                    <ButtonList buttons={navigationButtons} vertical />
+                }
+                <div className="container-renderer--buttons-desktop">
+                    <ButtonList buttons={buttonsList} vertical />
+                </div>
+                <div className="container-renderer--buttons-mobile">
+                    <ButtonList buttons={mobileButtonsList}/>
+                </div>
             </div>
-            <div className="container-renderer--buttons-mobile">
-                <ButtonList buttons={mobileButtonsList}/>
-            </div>
-            <div className="container-renderer--blocks">
-                {renderShowBlocks()}
+            <div className="container">
+                <div className="container-renderer--blocks">
+                    {renderShowBlocks()}
+                </div>
             </div>
         </div>
     );
