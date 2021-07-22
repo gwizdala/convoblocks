@@ -24,11 +24,11 @@ const icons = {
     upload: <UploadIcon className="button-icon" aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 167 167" /> 
 };
 
-const Button = ({dark=false, disabled=false, icon, iconOnly, onClick, text}) => {
+const Button = ({disabled=false, icon, iconOnly, onClick, text}) => {
 
     return (
         <button 
-            className={`button ${iconOnly && "button--icon-only"} ${dark && "button--dark"}`}
+            className={`button ${iconOnly && "button--icon-only"}`}
             aria-label={text} 
             onClick={() => onClick()}
             disabled={disabled}>

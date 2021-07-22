@@ -48,25 +48,4 @@
     &:disabled {
         background-color: #c5c5c5;
     }
-
-    &--dark {
-        background-color: #6200EE;
-        color: #B3F0FF;
-
-        &:focus {
-            background-color: #8642e6;
-            border-color: #69E5E8;
-            box-shadow: none;
-            outline: none;
-        }
-    
-        &:hover {
-            background-color: #8642e6;
-        }
-    
-        &:disabled {
-            background-color: #c5c5c5;
-            color: #000000;
-        }
-    }
 }

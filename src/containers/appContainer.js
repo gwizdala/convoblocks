@@ -96,13 +96,11 @@ const AppContainer = () => {
             case modes.EDIT:
                 return {
                     buttons,
-                    content: <EditorContainer {...config}
-                        navigationButtons={[{
-                            dark: true,
-                            onClick: () => setMode(modes.SHOW),
-                            text: "Show Conversation"
-                        }] }
-                        onUpdate={(newConfig) => setConfig(newConfig)} />,
+                    content: <EditorContainer {...config} onUpdate={(newConfig) => setConfig(newConfig)} />,
+                    navigationButton: {
+                        onClick: () => setMode(modes.SHOW),
+                        text: "Show Conversation"
+                    }
                 };
             case modes.HELP:
                 return {
@@ -116,14 +114,11 @@ const AppContainer = () => {
             case modes.SHOW:
                 return {
                     buttons,
-                    content: <RendererContainer {...config}
-                        history={history}
-                        navigationButtons={[{
-                            dark: true,
-                            onClick: () => {setMode(modes.EDIT); setHistory([]);},
-                            text:"Edit Conversation"
-                        }]}
-                        onUpdate={(newHistory) => setHistory(newHistory)}  />
+                    content: <RendererContainer {...config} history={history} onUpdate={(newHistory) => setHistory(newHistory)}  />,
+                    navigationButton: {
+                        onClick: () => {setMode(modes.EDIT); setHistory([]);},
+                        text:"Edit Conversation"
+                    }
                 };
             default:
                 return {
@@ -138,6 +133,7 @@ const AppContainer = () => {
         <div className="container-app">
             <ControlsContainer 
                 buttons={source.buttons}
+                navigationButton={source.navigationButton}
             />
             {source.content}
             <input 

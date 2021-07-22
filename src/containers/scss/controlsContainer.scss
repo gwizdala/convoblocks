@@ -1,9 +1,6 @@
 .container-controls {
-    position: sticky;
-    background-color: #242029;
+    background-color: #6200EE;
     height: 80px;
-    left: 0;
-    top: 0;
 
     &--menu {
         float: right;
@@ -25,6 +22,10 @@
         }
     }
 
+    &--navigation {
+        float: right;
+    }
+
     &--logo {
         float: left;
         max-height: 100%;
@@ -41,6 +42,15 @@
 
             &-desktop {
                 display: none;
+            }
+        }
+
+        &--navigation {
+            display: flex;
+            float: none;
+
+            .button {
+                flex: 1;
             }
         }
     }
