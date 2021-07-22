@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/convoblocks/static/css/main.14e37ce9.chunk.css",
-    "main.js": "/convoblocks/static/js/main.a7fd1966.chunk.js",
-    "main.js.map": "/convoblocks/static/js/main.a7fd1966.chunk.js.map",
+    "main.css": "/convoblocks/static/css/main.27610406.chunk.css",
+    "main.js": "/convoblocks/static/js/main.9e95ff3f.chunk.js",
+    "main.js.map": "/convoblocks/static/js/main.9e95ff3f.chunk.js.map",
     "runtime-main.js": "/convoblocks/static/js/runtime-main.775e91f7.js",
     "runtime-main.js.map": "/convoblocks/static/js/runtime-main.775e91f7.js.map",
     "static/js/2.b0e4cd91.chunk.js": "/convoblocks/static/js/2.b0e4cd91.chunk.js",
@@ -10,7 +10,7 @@
     "static/js/3.1fe41a03.chunk.js": "/convoblocks/static/js/3.1fe41a03.chunk.js",
     "static/js/3.1fe41a03.chunk.js.map": "/convoblocks/static/js/3.1fe41a03.chunk.js.map",
     "index.html": "/convoblocks/index.html",
-    "static/css/main.14e37ce9.chunk.css.map": "/convoblocks/static/css/main.14e37ce9.chunk.css.map",
+    "static/css/main.27610406.chunk.css.map": "/convoblocks/static/css/main.27610406.chunk.css.map",
     "static/js/2.b0e4cd91.chunk.js.LICENSE.txt": "/convoblocks/static/js/2.b0e4cd91.chunk.js.LICENSE.txt",
     "static/media/add.c7dcd755.svg": "/convoblocks/static/media/add.c7dcd755.svg",
     "static/media/convoblocks_logo.eaa0f00a.png": "/convoblocks/static/media/convoblocks_logo.eaa0f00a.png",
@@ -27,7 +27,7 @@
   "entrypoints": [
     "static/js/runtime-main.775e91f7.js",
     "static/js/2.b0e4cd91.chunk.js",
-    "static/css/main.14e37ce9.chunk.css",
-    "static/js/main.a7fd1966.chunk.js"
+    "static/css/main.27610406.chunk.css",
+    "static/js/main.9e95ff3f.chunk.js"
   ]
 }
